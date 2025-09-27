@@ -14,49 +14,57 @@ namespace EsSupermercato
     public partial class FormCassiere : Form
     {
         private List<Spesa> Spese = new();
-        private string filePath;
+        private string FilePath;
+        private Catalogo catalogo = new();
         public FormCassiere()
         {
             InitializeComponent();
-            filePath = SetupFile();
+            SetupFilePath();
+            readJSON();
         }
 
-        private string SetupFile ()
+        private void SetupFilePath()
         {
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "output JSON");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\..\", "output JSON");
 
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
 
-            string filePath = Path.Combine(path, "Spese.json");
+            
+            FilePath = Path.Combine(path, "Catalogo.json");
 
-            if (!File.Exists(filePath))
+            if (!File.Exists(FilePath))
             {
-                File.Create(filePath).Close();
+                File.Create(FilePath).Close();
+                writeJSON();
             }
 
-            return filePath;
         }
 
         private void readJSON ()
         {
             try //è necessario boh guardo esempio prof
             {
-                string serial = File.ReadAllText(filePath);
-                Spese = JsonConvert.DeserializeObject<List<Spesa>>(serial);
+                string serial = File.ReadAllText(FilePath);
+                catalogo = JsonConvert.DeserializeObject<Catalogo>(serial);
             }
             catch
             {
                 MessageBox.Show("Errore lettura");
             }
-            
+        }
+
+        private void writeJSON()
+        {
+            string serial = JsonConvert.SerializeObject(catalogo);
+            File.WriteAllText(FilePath, serial);
         }
 
         private void btn_GestisciCatalogo_Click(object sender, EventArgs e)
         {
-            using (FormGestioneCatalogo fgc = new())
+            using (FormGestioneCatalogo fgc = new(catalogo))
             {
                 if (fgc.ShowDialog() == DialogResult.OK)
                 {

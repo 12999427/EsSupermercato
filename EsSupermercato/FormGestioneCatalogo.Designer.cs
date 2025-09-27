@@ -33,11 +33,13 @@
             btn_Rimuovi = new Button();
             btn_Aggiungi = new Button();
             lbl_NumProdotti = new Label();
-            nmr_NumCassa = new NumericUpDown();
+            nmr_NumProdotti = new NumericUpDown();
             txt_Nome = new TextBox();
             dtg_Prodotti = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)nmr_NumCassa).BeginInit();
+            nmr_Prezzo = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)nmr_NumProdotti).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtg_Prodotti).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nmr_Prezzo).BeginInit();
             SuspendLayout();
             // 
             // lbl_Titolo
@@ -58,6 +60,7 @@
             btn_Conferma.TabIndex = 14;
             btn_Conferma.Text = "CONFERMA";
             btn_Conferma.UseVisualStyleBackColor = true;
+            btn_Conferma.Click += btn_Conferma_Click;
             // 
             // btn_Rimuovi
             // 
@@ -67,15 +70,17 @@
             btn_Rimuovi.TabIndex = 13;
             btn_Rimuovi.Text = "RIUMOVI";
             btn_Rimuovi.UseVisualStyleBackColor = true;
+            btn_Rimuovi.Click += btn_Rimuovi_Click;
             // 
             // btn_Aggiungi
             // 
-            btn_Aggiungi.Location = new Point(12, 190);
+            btn_Aggiungi.Location = new Point(12, 225);
             btn_Aggiungi.Name = "btn_Aggiungi";
             btn_Aggiungi.Size = new Size(247, 40);
             btn_Aggiungi.TabIndex = 12;
             btn_Aggiungi.Text = "AGGIUNGI";
             btn_Aggiungi.UseVisualStyleBackColor = true;
+            btn_Aggiungi.Click += btn_Aggiungi_Click;
             // 
             // lbl_NumProdotti
             // 
@@ -83,17 +88,17 @@
             lbl_NumProdotti.Name = "lbl_NumProdotti";
             lbl_NumProdotti.Size = new Size(138, 87);
             lbl_NumProdotti.TabIndex = 11;
-            lbl_NumProdotti.Text = "Numero Prodotti: \r\n\r\nNome:\r\n";
+            lbl_NumProdotti.Text = "Numero Prodotti: \r\n\r\nNome:\r\n\r\nPrezzo:\r\n";
             // 
-            // nmr_NumCassa
+            // nmr_NumProdotti
             // 
-            nmr_NumCassa.Location = new Point(156, 132);
-            nmr_NumCassa.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            nmr_NumCassa.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            nmr_NumCassa.Name = "nmr_NumCassa";
-            nmr_NumCassa.Size = new Size(103, 23);
-            nmr_NumCassa.TabIndex = 10;
-            nmr_NumCassa.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nmr_NumProdotti.Location = new Point(156, 132);
+            nmr_NumProdotti.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            nmr_NumProdotti.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nmr_NumProdotti.Name = "nmr_NumProdotti";
+            nmr_NumProdotti.Size = new Size(103, 23);
+            nmr_NumProdotti.TabIndex = 10;
+            nmr_NumProdotti.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // txt_Nome
             // 
@@ -115,23 +120,36 @@
             dtg_Prodotti.Size = new Size(517, 431);
             dtg_Prodotti.TabIndex = 18;
             // 
+            // nmr_Prezzo
+            // 
+            nmr_Prezzo.DecimalPlaces = 2;
+            nmr_Prezzo.Increment = new decimal(new int[] { 0, 0, 0, 0 });
+            nmr_Prezzo.Location = new Point(156, 190);
+            nmr_Prezzo.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            nmr_Prezzo.Name = "nmr_Prezzo";
+            nmr_Prezzo.Size = new Size(103, 23);
+            nmr_Prezzo.TabIndex = 19;
+            nmr_Prezzo.Value = new decimal(new int[] { 2, 0, 0, 0 });
+            // 
             // FormGestioneCatalogo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(dtg_Prodotti);
+            Controls.Add(nmr_Prezzo);
             Controls.Add(txt_Nome);
             Controls.Add(lbl_Titolo);
             Controls.Add(btn_Conferma);
             Controls.Add(btn_Rimuovi);
             Controls.Add(btn_Aggiungi);
             Controls.Add(lbl_NumProdotti);
-            Controls.Add(nmr_NumCassa);
+            Controls.Add(nmr_NumProdotti);
             Name = "FormGestioneCatalogo";
             Text = "FormGestioneCatalogo";
-            ((System.ComponentModel.ISupportInitialize)nmr_NumCassa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmr_NumProdotti).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtg_Prodotti).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmr_Prezzo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,8 +161,9 @@
         private Button btn_Rimuovi;
         private Button btn_Aggiungi;
         private Label lbl_NumProdotti;
-        private NumericUpDown nmr_NumCassa;
+        private NumericUpDown nmr_NumProdotti;
         private TextBox txt_Nome;
         private DataGridView dtg_Prodotti;
+        private NumericUpDown nmr_Prezzo;
     }
 }

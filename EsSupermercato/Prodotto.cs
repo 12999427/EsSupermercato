@@ -7,8 +7,26 @@ using System.Threading.Tasks;
 
 namespace EsSupermercato
 {
-    internal class Prodotto
+    public class Prodotto
     {
+        public float Prezzo
+        {
+            get
+            {
+                return Prezzo;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new Exception("Prezzo invalido");
+                }
+                else
+                {
+                    Prezzo = value;
+                }
+            }
+        }
         public string Nome
         {
             get
@@ -28,9 +46,10 @@ namespace EsSupermercato
             }
         }
 
-        public Prodotto(string nome)
+        public Prodotto(string nome, float prezzo)
         {
             Nome = nome;
+            Prezzo = prezzo;
         }
     }
 }
