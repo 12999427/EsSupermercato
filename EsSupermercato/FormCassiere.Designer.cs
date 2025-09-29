@@ -31,13 +31,16 @@
             chk_ClienteFidelizzato = new CheckBox();
             nmr_NumCassa = new NumericUpDown();
             lbl_NumCassa = new Label();
-            dtg_Prodotti = new DataGridView();
             btn_Scansiona = new Button();
             btn_Rimuovi = new Button();
             btn_Conferma = new Button();
             lbl_ParzialeSconto = new Label();
             lbl_Titolo = new Label();
             btn_GestisciCatalogo = new Button();
+            dtg_Prodotti = new DataGridView();
+            Nome = new DataGridViewTextBoxColumn();
+            Prezzo = new DataGridViewTextBoxColumn();
+            Quantità = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)nmr_NumCassa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtg_Prodotti).BeginInit();
             SuspendLayout();
@@ -69,19 +72,6 @@
             lbl_NumCassa.TabIndex = 2;
             lbl_NumCassa.Text = "Numero Cassa: ";
             // 
-            // dtg_Prodotti
-            // 
-            dtg_Prodotti.AllowUserToAddRows = false;
-            dtg_Prodotti.AllowUserToDeleteRows = false;
-            dtg_Prodotti.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dtg_Prodotti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_Prodotti.Location = new Point(271, 7);
-            dtg_Prodotti.Name = "dtg_Prodotti";
-            dtg_Prodotti.ReadOnly = true;
-            dtg_Prodotti.RowTemplate.Height = 25;
-            dtg_Prodotti.Size = new Size(517, 431);
-            dtg_Prodotti.TabIndex = 3;
-            // 
             // btn_Scansiona
             // 
             btn_Scansiona.Location = new Point(12, 225);
@@ -90,6 +80,7 @@
             btn_Scansiona.TabIndex = 4;
             btn_Scansiona.Text = "SCANSIONA PRODOTTO";
             btn_Scansiona.UseVisualStyleBackColor = true;
+            btn_Scansiona.Click += btn_Scansiona_Click;
             // 
             // btn_Rimuovi
             // 
@@ -137,18 +128,50 @@
             btn_GestisciCatalogo.UseVisualStyleBackColor = true;
             btn_GestisciCatalogo.Click += btn_GestisciCatalogo_Click;
             // 
+            // dtg_Prodotti
+            // 
+            dtg_Prodotti.AllowUserToAddRows = false;
+            dtg_Prodotti.AllowUserToDeleteRows = false;
+            dtg_Prodotti.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtg_Prodotti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_Prodotti.Columns.AddRange(new DataGridViewColumn[] { Nome, Prezzo, Quantità });
+            dtg_Prodotti.Location = new Point(271, 7);
+            dtg_Prodotti.Name = "dtg_Prodotti";
+            dtg_Prodotti.ReadOnly = true;
+            dtg_Prodotti.RowTemplate.Height = 25;
+            dtg_Prodotti.Size = new Size(517, 431);
+            dtg_Prodotti.TabIndex = 19;
+            // 
+            // Nome
+            // 
+            Nome.HeaderText = "Nome";
+            Nome.Name = "Nome";
+            Nome.ReadOnly = true;
+            // 
+            // Prezzo
+            // 
+            Prezzo.HeaderText = "Prezzo";
+            Prezzo.Name = "Prezzo";
+            Prezzo.ReadOnly = true;
+            // 
+            // Quantità
+            // 
+            Quantità.HeaderText = "Quantità";
+            Quantità.Name = "Quantità";
+            Quantità.ReadOnly = true;
+            // 
             // FormCassiere
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dtg_Prodotti);
             Controls.Add(btn_GestisciCatalogo);
             Controls.Add(lbl_Titolo);
             Controls.Add(lbl_ParzialeSconto);
             Controls.Add(btn_Conferma);
             Controls.Add(btn_Rimuovi);
             Controls.Add(btn_Scansiona);
-            Controls.Add(dtg_Prodotti);
             Controls.Add(lbl_NumCassa);
             Controls.Add(nmr_NumCassa);
             Controls.Add(chk_ClienteFidelizzato);
@@ -164,12 +187,15 @@
         private CheckBox chk_ClienteFidelizzato;
         private NumericUpDown nmr_NumCassa;
         private Label lbl_NumCassa;
-        private DataGridView dtg_Prodotti;
         private Button btn_Scansiona;
         private Button btn_Rimuovi;
         private Button btn_Conferma;
         private Label lbl_ParzialeSconto;
         private Label lbl_Titolo;
         private Button btn_GestisciCatalogo;
+        private DataGridView dtg_Prodotti;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Prezzo;
+        private DataGridViewTextBoxColumn Quantità;
     }
 }

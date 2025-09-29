@@ -12,9 +12,21 @@ namespace EsSupermercato
 {
     public partial class FormScansiona : Form
     {
-        public FormScansiona()
+        private Catalogo catalogo;
+        public event EventHandler<(Prodotto prodotto, int quantita)> gatherProduct;
+        public FormScansiona(Catalogo c, EventHandler<(Prodotto prodotto, int quantita)> gatherEvent)
         {
             InitializeComponent();
+            catalogo = c;
+            gatherProduct = gatherEvent;
         }
+
+        public FormScansiona(Catalogo c)
+        {
+            InitializeComponent();
+            catalogo = c;
+        }
+
+
     }
 }

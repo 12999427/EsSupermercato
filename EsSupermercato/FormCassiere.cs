@@ -32,7 +32,7 @@ namespace EsSupermercato
                 Directory.CreateDirectory(path);
             }
 
-            
+
             FilePath = Path.Combine(path, "Catalogo.json");
 
             if (!File.Exists(FilePath))
@@ -43,7 +43,7 @@ namespace EsSupermercato
 
         }
 
-        private void readJSON ()
+        private void readJSON()
         {
             try //è necessario boh guardo esempio prof
             {
@@ -71,6 +71,19 @@ namespace EsSupermercato
                     readJSON();
                 }
             }
+        }
+
+        private void btn_Scansiona_Click(object sender, EventArgs e)
+        {
+            using (FormScansiona fs = new(catalogo))
+            {
+                fs.gatherProduct += OttieniValore;
+            }
+        }
+
+        public void OttieniValore (object sender, EventArgs e)
+        {
+
         }
     }
 }

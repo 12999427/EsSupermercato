@@ -23,17 +23,23 @@ namespace EsSupermercato
 
         public void AggiungiProdotto(Prodotto p, int n)
         {
-            if (OttieniQuantitaProdotto(p) <= -n)
+            int q = OttieniQuantitaProdotto(p);
+            if (q == 0)
+            {
+                Prodotti[p] = n;
+            }
+            else if (q < (-n))
             {
                 throw new Exception("Non abbastanza");
             }
-            if (Prodotti.ContainsKey(p))
-            {
-                Prodotti[p] += n;
-            }
             else
             {
-                Prodotti[p] = n;
+                Prodotti[p] += n;
+                if (Prodotti[p] == 0)
+                {
+                    Prodotti.Remove(p);
+                }
+
             }
         }
 

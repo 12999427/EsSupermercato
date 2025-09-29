@@ -28,28 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dtg_Prodotti = new DataGridView();
             lbl_Titolo = new Label();
             btn_Conferma = new Button();
             lbl_NumProdotti = new Label();
             nmr_NumCassa = new NumericUpDown();
             comboBox1 = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dtg_Prodotti).BeginInit();
+            dtg_Prodotti = new DataGridView();
+            Nome = new DataGridViewTextBoxColumn();
+            Prezzo = new DataGridViewTextBoxColumn();
+            Quantità = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)nmr_NumCassa).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_Prodotti).BeginInit();
             SuspendLayout();
-            // 
-            // dtg_Prodotti
-            // 
-            dtg_Prodotti.AllowUserToAddRows = false;
-            dtg_Prodotti.AllowUserToDeleteRows = false;
-            dtg_Prodotti.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dtg_Prodotti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_Prodotti.Location = new Point(271, 10);
-            dtg_Prodotti.Name = "dtg_Prodotti";
-            dtg_Prodotti.ReadOnly = true;
-            dtg_Prodotti.RowTemplate.Height = 25;
-            dtg_Prodotti.Size = new Size(320, 362);
-            dtg_Prodotti.TabIndex = 23;
             // 
             // lbl_Titolo
             // 
@@ -96,31 +86,65 @@
             comboBox1.Size = new Size(245, 23);
             comboBox1.TabIndex = 24;
             // 
+            // dtg_Prodotti
+            // 
+            dtg_Prodotti.AllowUserToAddRows = false;
+            dtg_Prodotti.AllowUserToDeleteRows = false;
+            dtg_Prodotti.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtg_Prodotti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_Prodotti.Columns.AddRange(new DataGridViewColumn[] { Nome, Prezzo, Quantità });
+            dtg_Prodotti.Location = new Point(280, 12);
+            dtg_Prodotti.Name = "dtg_Prodotti";
+            dtg_Prodotti.ReadOnly = true;
+            dtg_Prodotti.RowTemplate.Height = 25;
+            dtg_Prodotti.Size = new Size(311, 360);
+            dtg_Prodotti.TabIndex = 25;
+            // 
+            // Nome
+            // 
+            Nome.HeaderText = "Nome";
+            Nome.Name = "Nome";
+            Nome.ReadOnly = true;
+            // 
+            // Prezzo
+            // 
+            Prezzo.HeaderText = "Prezzo";
+            Prezzo.Name = "Prezzo";
+            Prezzo.ReadOnly = true;
+            // 
+            // Quantità
+            // 
+            Quantità.HeaderText = "Quantità";
+            Quantità.Name = "Quantità";
+            Quantità.ReadOnly = true;
+            // 
             // FormScansiona
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(603, 384);
-            Controls.Add(comboBox1);
             Controls.Add(dtg_Prodotti);
+            Controls.Add(comboBox1);
             Controls.Add(lbl_Titolo);
             Controls.Add(btn_Conferma);
             Controls.Add(lbl_NumProdotti);
             Controls.Add(nmr_NumCassa);
             Name = "FormScansiona";
             Text = "FormScansiona";
-            ((System.ComponentModel.ISupportInitialize)dtg_Prodotti).EndInit();
             ((System.ComponentModel.ISupportInitialize)nmr_NumCassa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_Prodotti).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dtg_Prodotti;
         private Label lbl_Titolo;
         private Button btn_Conferma;
         private Label lbl_NumProdotti;
         private NumericUpDown nmr_NumCassa;
         private ComboBox comboBox1;
+        private DataGridView dtg_Prodotti;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Prezzo;
+        private DataGridViewTextBoxColumn Quantità;
     }
 }

@@ -36,6 +36,9 @@
             nmr_NumProdotti = new NumericUpDown();
             txt_Nome = new TextBox();
             dtg_Prodotti = new DataGridView();
+            Nome = new DataGridViewTextBoxColumn();
+            Prezzo = new DataGridViewTextBoxColumn();
+            Quantità = new DataGridViewTextBoxColumn();
             nmr_Prezzo = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)nmr_NumProdotti).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtg_Prodotti).BeginInit();
@@ -113,12 +116,31 @@
             dtg_Prodotti.AllowUserToDeleteRows = false;
             dtg_Prodotti.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtg_Prodotti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_Prodotti.Columns.AddRange(new DataGridViewColumn[] { Nome, Prezzo, Quantità });
             dtg_Prodotti.Location = new Point(271, 7);
             dtg_Prodotti.Name = "dtg_Prodotti";
             dtg_Prodotti.ReadOnly = true;
             dtg_Prodotti.RowTemplate.Height = 25;
             dtg_Prodotti.Size = new Size(517, 431);
             dtg_Prodotti.TabIndex = 18;
+            // 
+            // Nome
+            // 
+            Nome.HeaderText = "Nome";
+            Nome.Name = "Nome";
+            Nome.ReadOnly = true;
+            // 
+            // Prezzo
+            // 
+            Prezzo.HeaderText = "Prezzo";
+            Prezzo.Name = "Prezzo";
+            Prezzo.ReadOnly = true;
+            // 
+            // Quantità
+            // 
+            Quantità.HeaderText = "Quantità";
+            Quantità.Name = "Quantità";
+            Quantità.ReadOnly = true;
             // 
             // nmr_Prezzo
             // 
@@ -165,5 +187,8 @@
         private TextBox txt_Nome;
         private DataGridView dtg_Prodotti;
         private NumericUpDown nmr_Prezzo;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Prezzo;
+        private DataGridViewTextBoxColumn Quantità;
     }
 }

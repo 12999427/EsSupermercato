@@ -9,11 +9,12 @@ namespace EsSupermercato
 {
     public class Prodotto
     {
+        private float prezzo;
         public float Prezzo
         {
             get
             {
-                return Prezzo;
+                return prezzo;
             }
             private set
             {
@@ -23,25 +24,27 @@ namespace EsSupermercato
                 }
                 else
                 {
-                    Prezzo = value;
+                    prezzo = value;
                 }
             }
         }
+
+        private string nome;
         public string Nome
         {
             get
             {
-                return Nome;
+                return nome;
             }
             private set
             {
-                if (String.IsNullOrWhiteSpace(Nome))
+                if (String.IsNullOrWhiteSpace(value))
                 {
                     throw new Exception("Nome invalido");
                 }
                 else
                 {
-                    Nome = value;
+                    nome = value;
                 }
             }
         }
