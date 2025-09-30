@@ -24,7 +24,7 @@ namespace EsSupermercato
             nmr_Prezzo.Maximum = 100;
         }
 
-        public void UpdateDGV ()
+        public void UpdateDGV()
         {
             //dtg_Prodotti.DataSource = catalogo.Prodotti;
             dtg_Prodotti.Rows.Clear();

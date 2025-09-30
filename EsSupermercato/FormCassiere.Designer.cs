@@ -99,14 +99,14 @@
             btn_Conferma.TabIndex = 6;
             btn_Conferma.Text = "CONFERMA";
             btn_Conferma.UseVisualStyleBackColor = true;
+            btn_Conferma.Click += btn_Conferma_Click;
             // 
             // lbl_ParzialeSconto
             // 
             lbl_ParzialeSconto.Location = new Point(12, 333);
             lbl_ParzialeSconto.Name = "lbl_ParzialeSconto";
-            lbl_ParzialeSconto.Size = new Size(156, 23);
+            lbl_ParzialeSconto.Size = new Size(244, 42);
             lbl_ParzialeSconto.TabIndex = 7;
-            lbl_ParzialeSconto.Text = "Parziale: Sconto:";
             // 
             // lbl_Titolo
             // 

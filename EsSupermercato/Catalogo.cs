@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace EsSupermercato
 {
     public class Catalogo
     {
-        public Dictionary<Prodotto, int> Prodotti;
+        public Dictionary<Prodotto, int> Prodotti { get; set; }
 
         public Catalogo(Dictionary<Prodotto, int> v)
         {
@@ -19,6 +20,26 @@ namespace EsSupermercato
         public Catalogo()
         {
             Prodotti = new();
+        }
+
+        public Catalogo(List<(Prodotto prodotto, int quantita)> listaTuple)
+        {
+            Prodotti = new();
+            foreach (var tupla in listaTuple)
+            {
+                Prodotti.Add(tupla.prodotto, tupla.quantita);
+            }
+        }
+
+        public List<(Prodotto prodotto, int quantita)> ConvertiAListaTuple ()
+        {
+            List<(Prodotto prodotto, int quantita)> val = new();
+
+            foreach (var pair in Prodotti)
+            {
+                val.Add((pair.Key, pair.Value)); 
+            }
+            return val;
         }
 
         public void AggiungiProdotto(Prodotto p, int n)

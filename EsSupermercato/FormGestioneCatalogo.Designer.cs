@@ -96,7 +96,7 @@
             // nmr_NumProdotti
             // 
             nmr_NumProdotti.Location = new Point(156, 132);
-            nmr_NumProdotti.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            nmr_NumProdotti.Maximum = new decimal(new int[] { 600, 0, 0, 0 });
             nmr_NumProdotti.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nmr_NumProdotti.Name = "nmr_NumProdotti";
             nmr_NumProdotti.Size = new Size(103, 23);

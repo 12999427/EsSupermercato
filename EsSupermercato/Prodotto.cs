@@ -16,7 +16,7 @@ namespace EsSupermercato
             {
                 return prezzo;
             }
-            private set
+             set
             {
                 if (value <= 0)
                 {
@@ -36,7 +36,7 @@ namespace EsSupermercato
             {
                 return nome;
             }
-            private set
+             set
             {
                 if (String.IsNullOrWhiteSpace(value))
                 {

@@ -8,7 +8,14 @@ namespace EsSupermercato
 {
     internal class Spesa
     {
-        public Dictionary<Prodotto, int> Prodotti { get; private set; }
+        public int numCassa;
+        public Dictionary<Prodotto, int> Prodotti;
+
+        public Spesa(int IDcassa)
+        {
+            Prodotti = new Dictionary<Prodotto, int>();
+            numCassa = IDcassa;
+        }
 
         public Spesa()
         {

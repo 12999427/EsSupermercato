@@ -1,1 +1,16 @@
-{"Prodotti":{}}
+[
+  {
+    "Item1": {
+      "Prezzo": 2.0,
+      "Nome": "AAA"
+    },
+    "Item2": 5
+  },
+  {
+    "Item1": {
+      "Prezzo": 2.0,
+      "Nome": "AAAAA"
+    },
+    "Item2": 1
+  }
+]
