@@ -27,11 +27,25 @@ namespace EsSupermercato
             if (Prodotti.ContainsKey(p))
             {
                 Prodotti[p] += n;
+                if (Prodotti[p] == 0)
+                    Prodotti.Remove(p);
             }
             else
             {
                 Prodotti[p] = n;
             }
+        }
+
+        public int OttieniQuantitaProdotto(Prodotto p)
+        {
+            foreach (KeyValuePair<Prodotto, int> kvp in Prodotti)
+            {
+                if (kvp.Key == p)
+                {
+                    return kvp.Value;
+                }
+            }
+            return -1;
         }
     }
 }

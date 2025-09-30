@@ -90,6 +90,7 @@
             btn_Rimuovi.TabIndex = 5;
             btn_Rimuovi.Text = "RIMUOVI PRODOTTO";
             btn_Rimuovi.UseVisualStyleBackColor = true;
+            btn_Rimuovi.Click += btn_Rimuovi_Click_2;
             // 
             // btn_Conferma
             // 
@@ -136,6 +137,7 @@
             dtg_Prodotti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_Prodotti.Columns.AddRange(new DataGridViewColumn[] { Nome, Prezzo, Quantità });
             dtg_Prodotti.Location = new Point(271, 7);
+            dtg_Prodotti.MultiSelect = false;
             dtg_Prodotti.Name = "dtg_Prodotti";
             dtg_Prodotti.ReadOnly = true;
             dtg_Prodotti.RowTemplate.Height = 25;

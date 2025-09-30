@@ -1,16 +1,23 @@
 [
   {
     "Item1": {
-      "Prezzo": 2.0,
-      "Nome": "AAA"
+      "Prezzo": 1.55,
+      "Nome": "Pane"
     },
-    "Item2": 5
+    "Item2": 175
   },
   {
     "Item1": {
-      "Prezzo": 2.0,
-      "Nome": "AAAAA"
+      "Prezzo": 1.0,
+      "Nome": "Pasta"
     },
-    "Item2": 1
+    "Item2": 200
+  },
+  {
+    "Item1": {
+      "Prezzo": 3.0,
+      "Nome": "Pancakes"
+    },
+    "Item2": 50
   }
 ]

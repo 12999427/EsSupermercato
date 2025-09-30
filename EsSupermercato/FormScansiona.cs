@@ -57,6 +57,7 @@ namespace EsSupermercato
                 if (p != null)
                 {
                     gatherProduct(this, (p, (int)nmr_NumCassa.Value));
+                    DialogResult = DialogResult.OK;
                     Close();
                     return;
                 }                    
