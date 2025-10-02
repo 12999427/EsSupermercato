@@ -82,6 +82,7 @@
             // 
             // cmb_TipiProdotti
             // 
+            cmb_TipiProdotti.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_TipiProdotti.FormattingEnabled = true;
             cmb_TipiProdotti.Location = new Point(12, 191);
             cmb_TipiProdotti.Name = "cmb_TipiProdotti";

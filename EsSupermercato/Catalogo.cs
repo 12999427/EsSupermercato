@@ -78,7 +78,7 @@ namespace EsSupermercato
         {
             foreach (KeyValuePair<Prodotto, int> keyValuePair in Prodotti)
             {
-                if (keyValuePair.Key.Nome == n)
+                if (keyValuePair.Key.Nome.ToLower() == n.ToLower())
                     return keyValuePair.Key;
             }
             return null;

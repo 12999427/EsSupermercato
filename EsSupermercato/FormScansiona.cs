@@ -31,7 +31,7 @@ namespace EsSupermercato
             SetupComboBoxValues();
             UpdateDGV();
         }
-        public void SetupComboBoxValues ()
+        public void SetupComboBoxValues()
         {
             foreach (Prodotto p in catalogo.Prodotti.Keys)
             {
@@ -60,7 +60,7 @@ namespace EsSupermercato
                     DialogResult = DialogResult.OK;
                     Close();
                     return;
-                }                    
+                }
             }
             MessageBox.Show("Nome Prodotto invalido");
         }
